@@ -5,10 +5,9 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
-/**
- *
- * @author naoal
- */
-public interface FacturaDao {
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Factura;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface FacturaDao extends JpaRepository<Factura, Long> {
+    
 }

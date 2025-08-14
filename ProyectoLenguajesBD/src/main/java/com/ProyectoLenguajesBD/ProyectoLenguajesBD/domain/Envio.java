@@ -5,10 +5,31 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain;
 
-/**
- *
- * @author naoal
- */
-public class Envio {
+import jakarta.persistence.*;
+import lombok.Data;
+import java.io.Serializable;
+import java.util.Date;
 
+@Data
+@Entity
+@Table(name = "Envios")
+public class Envio implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "envio_seq")
+    @SequenceGenerator(name = "envio_seq", sequenceName = "ENVIOS_SEQ", allocationSize = 1)
+    @Column(name = "ID_Envio")
+    private Long idEnvio;
+
+    @Column(name = "Direccion_Entrega")
+    private String direccionEntrega;
+
+    @Column(name = "Fecha_Envio")
+    private Date fechaEnvio;
+
+    @Column(name = "Estado_Envio")
+    private String estadoEnvio;
+
+    @Column(name = "Pedido_ID")
+    private Long pedidoId;
 }

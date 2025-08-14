@@ -5,10 +5,9 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
-/**
- *
- * @author naoal
- */
-public interface ProveedoresDao {
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Proveedor;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface ProveedorDao extends JpaRepository<Proveedor, Long> {
+    
 }

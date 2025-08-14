@@ -5,10 +5,29 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain;
 
-/**
- *
- * @author naoal
- */
-public class Proveedores {
+import jakarta.persistence.*;
+import lombok.Data;
+import java.io.Serializable;
+import java.util.Date;
 
+@Data
+@Entity
+@Table(name = "Proveedores")
+public class Proveedor implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "proveedor_seq")
+    @SequenceGenerator(name = "proveedor_seq", sequenceName = "PROVEEDORES_SEQ", allocationSize = 1)
+    @Column(name = "ID_Proveedor")
+    private Long idProveedor;
+
+    private String nombre;
+    private String contacto;
+    private String telefono;
+    private String correo;
+
+    @Column(name = "Fecha_Registro")
+    private Date fechaRegistro;
+
+    private String direccion;
 }

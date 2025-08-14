@@ -5,10 +5,9 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
-/**
- *
- * @author naoal
- */
-public interface PedidoDao {
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Pedido;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface PedidoDao extends JpaRepository<Pedido, Long> {
+    
 }

@@ -5,10 +5,9 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
-/**
- *
- * @author naoal
- */
-public interface EnvioDao {
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Envio;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface EnvioDao extends JpaRepository<Envio, Long> {
+    
 }
