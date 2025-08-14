@@ -4,11 +4,13 @@
  */
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.service;
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Cliente;
+import java.util.List;
 
-/**
- *
- * @author naoal
- */
 public interface ClienteService {
-
+    List<Cliente> getClientes();
+    List<Cliente> getClientesActivos();
+    Cliente getCliente(Long id);
+    void save(Cliente c);
+    void delete(Long id);
 }
