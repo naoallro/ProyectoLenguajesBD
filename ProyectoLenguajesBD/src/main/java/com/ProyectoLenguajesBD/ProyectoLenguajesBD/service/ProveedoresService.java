@@ -4,11 +4,14 @@
  */
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.service;
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Proveedor;
+import java.util.List;
 
-/**
- *
- * @author naoal
- */
-public interface ProveedoresService {
-
+public interface ProveedorService {
+    List<Proveedor> getProveedores();
+    List<Proveedor> getProveedoresActivos();
+    Proveedor getProveedor(Long id);
+    void save(Proveedor p);
+    void delete(Long id);
 }
+
