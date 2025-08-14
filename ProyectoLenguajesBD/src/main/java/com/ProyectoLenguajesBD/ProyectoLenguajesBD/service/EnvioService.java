@@ -5,10 +5,15 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.service;
 
-/**
- *
- * @author naoal
- */
-public class EnvioService {
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Envio;
+import java.util.List;
 
+public interface EnvioService {
+    List<Envio> getEnvios();
+    List<Envio> getEnviosPorPedido(Long pedidoId);
+    Envio getEnvio(Long id);
+    void save(Envio e);
+    void delete(Long id);
 }
+
+
