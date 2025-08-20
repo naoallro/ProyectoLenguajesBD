@@ -9,5 +9,7 @@ import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Factura;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FacturaDao extends JpaRepository<Factura, Long> {
+
+    public Factura findByPedidoId(Long pedidoId);
     
 }

@@ -7,7 +7,8 @@ package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
 import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Proveedor;
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
 public interface ProveedorDao extends JpaRepository<Proveedor, Long> {
-    
+    List<Proveedor> findByEstadoOrderByNombreAsc(String estado);
 }

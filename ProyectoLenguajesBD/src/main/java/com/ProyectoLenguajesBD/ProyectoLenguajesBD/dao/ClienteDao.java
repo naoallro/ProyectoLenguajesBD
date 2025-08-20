@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 
+
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
 import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Cliente;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteDao extends JpaRepository<Cliente, Long> {
-    
+    List<Cliente> findByEstado(String estado);
 }

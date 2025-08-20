@@ -6,6 +6,8 @@
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.Controller;
 
 
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Producto;
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

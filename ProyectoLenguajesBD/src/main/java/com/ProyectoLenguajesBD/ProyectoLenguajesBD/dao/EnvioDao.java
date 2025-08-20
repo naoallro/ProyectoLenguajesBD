@@ -6,8 +6,11 @@
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao;
 
 import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Envio;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EnvioDao extends JpaRepository<Envio, Long> {
+
+    public List<Envio> findByPedidoIdOrderByIdEnvioAsc(Long pedidoId);
     
 }

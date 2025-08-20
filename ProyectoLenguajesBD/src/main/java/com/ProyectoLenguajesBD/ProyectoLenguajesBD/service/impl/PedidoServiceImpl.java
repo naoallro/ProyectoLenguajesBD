@@ -2,44 +2,45 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.service.impl;
 
-import com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao.ProductoDao;
-import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Producto;
-import com.ProyectoLenguajesBD.ProyectoLenguajesBD.service.ProductoService;
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.dao.PedidoDao;
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Pedido;
+import com.ProyectoLenguajesBD.ProyectoLenguajesBD.service.PedidoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 @Service
-public class ProductoServiceImpl implements ProductoService {
+public class PedidoServiceImpl implements PedidoService {
 
     @Autowired
-    private ProductoDao productoDao;
+    private PedidoDao pedidoDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Producto> getProductos() {
-        return productoDao.findAll();
+    public List<Pedido> getPedidos() {
+        return pedidoDao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Producto getProducto(Long id) {
-        return productoDao.findById(id).orElse(null);
+    public Pedido getPedido(Long id) {
+        return pedidoDao.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
-    public void save(Producto producto) {
-        productoDao.save(producto);
+    public void save(Pedido pedido) {
+        pedidoDao.save(pedido);
     }
 
     @Override
     @Transactional
     public void delete(Long id) {
-        productoDao.deleteById(id);
+        pedidoDao.deleteById(id);
     }
 }

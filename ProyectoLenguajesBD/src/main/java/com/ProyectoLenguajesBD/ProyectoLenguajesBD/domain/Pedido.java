@@ -12,23 +12,27 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "Pedidos")
+@Table(name = "PEDIDOS")
 public class Pedido implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pedido_seq")
     @SequenceGenerator(name = "pedido_seq", sequenceName = "PEDIDOS_SEQ", allocationSize = 1)
-    @Column(name = "ID_Pedido")
+    @Column(name = "ID_PEDIDO")
     private Long idPedido;
 
-    @Column(name = "Cliente_ID")
-    private Long clienteId;
+    @Column(name = "NUMERO")
+    private Long numero;
 
-    @Column(name = "Fecha_Pedido")
-    private Date fechaPedido;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "FECHA")
+    private Date fecha;
 
-    @Column(name = "Total")
-    private Double total;
-
+    @Column(name = "ESTADO", length = 1)
     private String estado;
+
+    @Column(name = "TOTAL_PEDIDO")
+    private Double totalPedido;
+
+    @Column(name = "CLIENTE_ID")
+    private Long clienteId;
 }

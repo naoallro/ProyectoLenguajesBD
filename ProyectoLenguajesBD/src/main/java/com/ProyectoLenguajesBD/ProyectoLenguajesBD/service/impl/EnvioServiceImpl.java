@@ -25,7 +25,7 @@ public class EnvioServiceImpl implements EnvioService {
 
     @Override @Transactional(readOnly = true)
     public List<Envio> getEnviosPorPedido(Long pedidoId) {
-        return envioDao.findByPedidoIdOrderByIdEnviosAsc(pedidoId);
+        return envioDao.findByPedidoIdOrderByIdEnvioAsc(pedidoId);
     }
 
     @Override @Transactional(readOnly = true)

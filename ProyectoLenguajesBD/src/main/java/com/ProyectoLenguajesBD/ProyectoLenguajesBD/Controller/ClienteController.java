@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package com.ProyectoLenguajesBD.ProyectoLenguajesBD.Controller;
+
+
+package com.ProyectoLenguajesBD.ProyectoLenguajesBD.controller;
 
 import com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain.Cliente;
 import com.ProyectoLenguajesBD.ProyectoLenguajesBD.service.ClienteService;

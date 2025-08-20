@@ -5,6 +5,7 @@
 
 package com.ProyectoLenguajesBD.ProyectoLenguajesBD.domain;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 import java.io.Serializable;
@@ -12,24 +13,27 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "Envios")
+@Table(name = "ENVIOS")
 public class Envio implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "envio_seq")
     @SequenceGenerator(name = "envio_seq", sequenceName = "ENVIOS_SEQ", allocationSize = 1)
-    @Column(name = "ID_Envio")
+    @Column(name = "ID_ENVIOS")          // <- en BD es plural
     private Long idEnvio;
 
-    @Column(name = "Direccion_Entrega")
-    private String direccionEntrega;
+    @Column(name = "PEDIDO_ID")
+    private Long pedidoId;
 
-    @Column(name = "Fecha_Envio")
+    @Column(name = "TRACKING_NUMBER")
+    private String trackingNumber;
+
+    @Column(name = "ESTADO")
+    private String estado;               // en BD: ESTADO (no ESTADO_ENVIO)
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "FECHA_ENVIO")
     private Date fechaEnvio;
 
-    @Column(name = "Estado_Envio")
-    private String estadoEnvio;
-
-    @Column(name = "Pedido_ID")
-    private Long pedidoId;
+    @Column(name = "TRANSPORTISTA_ID")
+    private Long transportistaId;
 }
