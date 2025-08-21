@@ -6,8 +6,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @Entity
@@ -27,8 +29,9 @@ public class Producto implements Serializable {
     @Column(name = "Categoria_ID")
     private Long categoriaId;
 
-    @Column(name = "Fecha_Creacion")
-    private Date fechaCreacion;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @Column(name = "FECHA_CREACION")
+    private LocalDate fechaCreacion;
 
     private String estado;
     private Integer cantidad;

@@ -28,18 +28,23 @@ public class ProductoServiceImpl implements ProductoService {
     @Override
     @Transactional(readOnly = true)
     public Producto getProducto(Long id) {
-        return productoDao.findById(id).orElse(null);
+        return (id == null) ? null : productoDao.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
-    public void save(Producto producto) {
-        productoDao.save(producto);
+    public void save(Producto p) {
+        if (p.getIdProducto() != null && p.getIdProducto() == 0L) {
+            p.setIdProducto(null);
+        }
+        productoDao.save(p);
     }
 
     @Override
     @Transactional
     public void delete(Long id) {
-        productoDao.deleteById(id);
+        if (id != null) {
+            productoDao.deleteById(id);
+        }
     }
 }
